@@ -1,0 +1,237 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f1f5f9;
+    padding: 20px;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+header h1 {
+    color: #1e293b;
+}
+
+nav {
+    margin-bottom: 20px;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+
+    list-style: none;
+}
+
+nav button {
+    padding: 10px 20px;
+
+    border: none;
+    border-radius: 6px;
+
+    background-color: #0f172a;
+    color: white;
+
+    cursor: pointer;
+}
+
+nav button:hover {
+    background-color: #334155;
+}
+
+section {
+    background-color: white;
+
+    padding: 20px;
+
+    border-radius: 10px;
+
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+section h2 {
+    margin-bottom: 15px;
+    color: #1e293b;
+}
+
+table {
+    width: 100%;
+
+    border-collapse: collapse;
+
+    margin-top: 15px;
+}
+
+th,
+td {
+    padding: 12px;
+
+    border: 1px solid #ddd;
+
+    text-align: center;
+}
+
+th {
+    background-color: #2563eb;
+    color: white;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #f8fafc;
+}
+
+tbody tr:hover {
+    background-color: #e2e8f0;
+}
+
+main {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+@media(max-width:1024px) {
+    main {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+@media(max-width:768px) {
+    table {
+        display: block;
+        overflow-x: auto;
+    }
+
+}
+
+.bg-green,
+.bg-red {
+    flex: 1;
+    min-width: 80px;
+    height: 70px;
+}
+
+.bg-green {
+    background-color: #2ED573;
+    color: white;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 6px;
+    margin: 5px;
+    font-weight: bold;
+}
+
+.bg-red {
+    background-color: #FF4757;
+    color: white;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 6px;
+    margin: 5px;
+    font-weight: bold;
+}
+
+.selected-room {
+    background-color: #1d4ed8;
+}
+
+.center-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+
+    width: 100%;
+}
+
+#hotelMap {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+}
+
+#hotelMap>div {
+    display: flex;
+    gap: 10px;
+    width: 100%;
+}
+
+#hotelMap>div>div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.room-star {
+    font-size: 12px;
+    margin-top: 4px;
+    opacity: 0.9;
+}
+
+#bookingForm {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+
+    width: 100%;
+    max-width: 350px;
+
+    margin-top: 20px;
+    padding: 20px;
+
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    background-color: #f8fafc;
+}
+
+#bookingForm input {
+    padding: 10px;
+    font-size: 16px;
+
+    border: 1px solid #ccc;
+    border-radius: 6px;
+}
+
+#bookingForm input:focus {
+    outline: none;
+    border-color: #2563eb;
+}
+
+#bookingForm button {
+    padding: 10px;
+
+    border: none;
+    border-radius: 6px;
+
+    background-color: #2563eb;
+    color: white;
+
+    cursor: pointer;
+    font-size: 16px;
+}
+
+#bookingForm button:hover {
+    background-color: #1d4ed8;
+}
+
+#message {
+    margin-top: 15px;
+    font-weight: bold;
+}

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LuxeStay Hotel</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <h1>LuxeStay Hotel</h1>
+    </header>
+
+    <nav>
+        <ul>
+            <li>
+                <button id="clientBtn">
+                    Client
+                </button>
+            </li>
+
+            <li>
+                <button id="adminBtn">
+                    Admin
+                </button>
+            </li>
+        </ul>
+    </nav>
+
+    <main>
+        <section id="clientView">
+            <h2>Customer Booking</h2>
+
+            <div class="center-box">
+                <div id="hotelMap"></div>
+
+                <form id="bookingForm">
+                    <input id="customerName" placeholder="Tên khách">
+                    <input id="customerPhone" placeholder="SĐT">
+                    <button>Đặt phòng</button>
+                </form>
+
+                <div id="message"></div>
+            </div>
+        </section>
+        <section id="adminView">
+            <h2>Admin Dashboard</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Customer</th>
+                        <th>Room</th>
+                        <th>Total</th>
+                    </tr>
+                </thead>
+                <tbody id="historyBody">
+                </tbody>
+            </table>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
