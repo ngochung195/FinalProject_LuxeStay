@@ -11,35 +11,39 @@
 
 <body>
     <header>
-        <h1>LuxeStay Hotel</h1>
+        <div class="header-inner">
+            <div class="brand">
+                <div class="brand-icon">🏨</div>
+                <div>
+                    <h1>LuxeStay Hotel</h1>
+                    <p class="tagline">Hệ thống quản lý khách sạn</p>
+                </div>
+            </div>
+
+            <nav>
+                <ul>
+                    <li><button id="clientBtn">🧑 Khách hàng</button></li>
+                    <li><button id="adminBtn">🔐 Quản trị</button></li>
+                </ul>
+            </nav>
+        </div>
     </header>
-
-    <nav>
-        <ul>
-            <li>
-                <button id="clientBtn">
-                    Client
-                </button>
-            </li>
-
-            <li>
-                <button id="adminBtn">
-                    Admin
-                </button>
-            </li>
-        </ul>
-    </nav>
-
     <main>
         <section id="clientView">
             <h2>Customer Booking</h2>
 
             <div class="center-box">
                 <div id="hotelMap"></div>
+                <div id="adjacentRoom">
+                    <input id="adjacentQty" type="number" min="1" placeholder="Số phòng cần tìm (nhóm/gia đình)">
+                    <button id="adjacentBtn">Tìm phòng liền kề</button>
+                </div>
 
                 <form id="bookingForm">
-                    <input id="customerName" placeholder="Tên khách">
-                    <input id="customerPhone" placeholder="SĐT">
+                    <input id="customerID" placeholder="ID khách hàng">
+                    <input id="customerName" placeholder="Tên khách hàng">
+                    <input id="customerPhone" placeholder="Số điện thoại">
+                    <div id="discountNotice">Bạn được giảm 5% nhờ điểm thưởng!</div>
                     <button>Đặt phòng</button>
                 </form>
 
@@ -48,17 +52,55 @@
         </section>
         <section id="adminView">
             <h2>Admin Dashboard</h2>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Customer</th>
-                        <th>Room</th>
-                        <th>Total</th>
-                    </tr>
-                </thead>
-                <tbody id="historyBody">
-                </tbody>
-            </table>
+            <div>
+                <h3>Lịch sử đặt phòng</h3>
+
+                <div id="sortControls">
+                    <button id="sortAsc">↑ Giá tăng dần</button>
+                    <button id="sortDesc">↓ Giá giảm dần</button>
+                    <button id="sortReset">↺ Mặc định</button>
+                </div>
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Khách hàng</th>
+                            <th>Số điện thoại</th>
+                            <th>Phòng</th>
+                            <th>Tổng tiền</th>
+                        </tr>
+                    </thead>
+                    <tbody id="historyBody">
+                    </tbody>
+                </table>
+            </div>
+            <div>
+                <h3 style="margin-top: 20px;">Thống kê</h3>
+                <div id="adminStats">
+                    <div class="stat-card" id="statRevenue"></div>
+                    <div class="stat-card" id="statHighValue"></div>
+                    <div class="stat-card" id="statNameList"></div>
+                </div>
+            </div>
+            <div>
+                <h3 style="margin-top: 20px;">Biểu đồ doanh thu theo loại phòng</h3>
+                <canvas id="revenueChart"></canvas>
+            </div>
+            <div>
+                <h3 style="margin-top: 30px;">Danh sách khách hàng</h3>
+                <table id="customerTable">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Khách hàng</th>
+                            <th>Số điện thoại</th>
+                            <th>Người giới thiệu</th>
+                            <th>Điểm thưởng</th>
+                        </tr>
+                    </thead>
+                    <tbody id="customerBody"></tbody>
+                </table>
+            </div>
         </section>
     </main>
 
