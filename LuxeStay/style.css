@@ -7,75 +7,126 @@
 body {
     font-family: Arial, sans-serif;
     background-color: #f1f5f9;
-    padding: 20px;
 }
 
+/* ===== HEADER ===== */
 header {
-    text-align: center;
-    margin-bottom: 20px;
+    background-color: #ffffff;
+    border-bottom: 1px solid #e2e8f0;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
+}
+
+.header-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 32px;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.brand-icon {
+    width: 44px;
+    height: 44px;
+    background: #eff6ff;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
 }
 
 header h1 {
     color: #1e293b;
+    font-size: 24px;
+    font-weight: 600;
+    margin: 0;
 }
 
+header p.tagline {
+    color: #64748b;
+    font-size: 12px;
+    margin: 3px 0 0;
+}
+
+/* ===== NAV — pill bên phải header ===== */
 nav {
-    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
 }
 
 nav ul {
     display: flex;
-    justify-content: center;
-    gap: 15px;
-
     list-style: none;
+    padding: 3px;
+    gap: 2px;
+    background: #f1f5f9;
+    border-radius: 8px;
 }
 
 nav button {
-    padding: 10px 20px;
-
+    padding: 7px 20px;
     border: none;
     border-radius: 6px;
-
-    background-color: #0f172a;
-    color: white;
-
+    background: transparent;
+    color: #64748b;
     cursor: pointer;
+    font-size: 13.5px;
+    font-weight: 500;
+    transition: all 0.18s;
 }
 
 nav button:hover {
-    background-color: #334155;
+    color: #1e293b;
+}
+
+nav button.active {
+    background: #ffffff;
+    color: #2563eb;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.10);
+}
+
+/* ===== LAYOUT ===== */
+main {
+    display: block;
+    padding: 24px 28px;
 }
 
 section {
     background-color: white;
-
-    padding: 20px;
-
+    padding: 24px 28px;
     border-radius: 10px;
-
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
 }
 
 section h2 {
-    margin-bottom: 15px;
+    margin-bottom: 16px;
     color: #1e293b;
+    font-size: 17px;
 }
 
+section h3 {
+    margin-top: 24px;
+    margin-bottom: 12px;
+    color: #1e293b;
+    font-size: 15px;
+}
+
+/* ===== TABLE ===== */
 table {
     width: 100%;
-
     border-collapse: collapse;
-
     margin-top: 15px;
 }
 
 th,
 td {
     padding: 12px;
-
     border: 1px solid #ddd;
-
     text-align: center;
 }
 
@@ -92,83 +143,25 @@ tbody tr:hover {
     background-color: #e2e8f0;
 }
 
-main {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 20px;
-}
-
-@media(max-width:1024px) {
-    main {
-        grid-template-columns: 1fr;
-    }
-
-}
-
-@media(max-width:768px) {
-    table {
-        display: block;
-        overflow-x: auto;
-    }
-
-}
-
-.bg-green,
-.bg-red {
-    flex: 1;
-    min-width: 80px;
-    height: 70px;
-}
-
-.bg-green {
-    background-color: #2ED573;
-    color: white;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    border-radius: 6px;
-    margin: 5px;
-    font-weight: bold;
-}
-
-.bg-red {
-    background-color: #FF4757;
-    color: white;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    border-radius: 6px;
-    margin: 5px;
-    font-weight: bold;
-}
-
-.selected-room {
-    background-color: #1d4ed8;
-}
-
+/* ===== SƠ ĐỒ PHÒNG ===== */
 .center-box {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 15px;
-
+    gap: 16px;
     width: 100%;
 }
 
 #hotelMap {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 8px;
     width: 100%;
 }
 
 #hotelMap>div {
     display: flex;
-    gap: 10px;
+    gap: 8px;
     width: 100%;
 }
 
@@ -180,33 +173,132 @@ main {
 }
 
 .room-star {
-    font-size: 12px;
-    margin-top: 4px;
+    font-size: 11px;
+    margin-top: 3px;
     opacity: 0.9;
+}
+
+.bg-green,
+.bg-red {
+    flex: 1;
+    min-width: 60px;
+    height: 64px;
+    border-radius: 8px;
+    margin: 0;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.bg-green {
+    background-color: #2ED573;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.bg-red {
+    background-color: #FF4757;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.selected-room {
+    background-color: #1d4ed8;
+}
+
+.bg-highlight {
+    background-color: #f59e0b;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+    margin: 0;
+    font-weight: 600;
+    flex: 1;
+    min-width: 60px;
+    height: 64px;
+}
+
+/* ===== BOTTOM ROW: tìm nhóm + form ===== */
+.bottom-row {
+    display: flex;
+    gap: 24px;
+    align-items: flex-start;
+    margin-top: 8px;
+}
+
+/* ===== BOTTOM AREA: căn giữa dọc ===== */
+
+
+#adjacentRoom {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    width: 60%;
+}
+
+#adjacentRoom input {
+    flex: 1;
+    padding: 10px 12px;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    font-size: 14px;
+}
+
+#adjacentRoom button {
+    padding: 10px 14px;
+    background-color: #7c3aed;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    white-space: nowrap;
+}
+
+#adjacentRoom button:hover {
+    background-color: #6d28d9;
 }
 
 #bookingForm {
     display: flex;
     flex-direction: column;
-    gap: 12px;
+    gap: 10px;
+    width: 60%;
+    background: transparent;
+    border: none;
+    padding: 0;
+    margin: 0;
+}
 
-    width: 100%;
-    max-width: 350px;
+#customerID {
+    grid-column: unset;
+}
 
-    margin-top: 20px;
-    padding: 20px;
-
-    border: 1px solid #ddd;
-    border-radius: 10px;
-    background-color: #f8fafc;
+#discountNotice {
+    grid-column: span 2;
+    display: none;
+    color: #16a34a;
+    font-size: 13px;
+    background: #dcfce7;
+    padding: 8px 12px;
+    border-radius: 6px;
+    border-left: 3px solid #16a34a;
 }
 
 #bookingForm input {
-    padding: 10px;
-    font-size: 16px;
-
-    border: 1px solid #ccc;
-    border-radius: 6px;
+    padding: 10px 12px;
+    font-size: 14px;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
 }
 
 #bookingForm input:focus {
@@ -215,16 +307,15 @@ main {
 }
 
 #bookingForm button {
-    padding: 10px;
-
+    grid-column: span 2;
+    padding: 11px;
     border: none;
-    border-radius: 6px;
-
+    border-radius: 8px;
     background-color: #2563eb;
     color: white;
-
     cursor: pointer;
-    font-size: 16px;
+    font-size: 15px;
+    font-weight: 600;
 }
 
 #bookingForm button:hover {
@@ -232,6 +323,113 @@ main {
 }
 
 #message {
-    margin-top: 15px;
-    font-weight: bold;
+    margin-top: 12px;
+    font-weight: 500;
+    font-size: 14px;
+    color: #1e293b;
+}
+
+/* ===== ADMIN ===== */
+#adminStats {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 12px;
+}
+
+.stat-card {
+    flex: 1;
+    min-width: 180px;
+    background: #f1f5f9;
+    border-left: 4px solid #2563eb;
+    border-radius: 0 8px 8px 0;
+    padding: 14px 16px;
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+.stat-card strong {
+    display: block;
+    font-size: 15px;
+    margin-bottom: 6px;
+    color: #1e293b;
+}
+
+#sortControls {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 12px;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+}
+
+#sortControls button {
+    padding: 7px 14px;
+    border: none;
+    border-radius: 6px;
+    background-color: #334155;
+    color: white;
+    cursor: pointer;
+    font-size: 13px;
+}
+
+#sortControls button:hover {
+    background-color: #475569;
+}
+
+#sortControls button.active {
+    background-color: #2563eb;
+}
+
+#revenueChart {
+    width: 100%;
+    height: 400px;
+    margin-top: 8px;
+    border-radius: 8px;
+    background: #f8fafc;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 1024px) {
+    .bottom-row {
+        flex-direction: column;
+    }
+
+    #adjacentRoom,
+    #bookingForm {
+        width: 100%;
+        flex: unset;
+    }
+}
+
+@media (max-width: 768px) {
+    .header-inner {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+        padding: 14px 16px;
+    }
+
+    main {
+        padding: 16px;
+    }
+
+    section {
+        padding: 16px;
+    }
+
+    table {
+        display: block;
+        overflow-x: auto;
+    }
+
+    #bookingForm {
+        grid-template-columns: 1fr;
+    }
+
+    #customerID,
+    #bookingForm button,
+    #discountNotice {
+        grid-column: span 1;
+    }
 }
